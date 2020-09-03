@@ -13,12 +13,17 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+/*Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});*/
+Route::namespace('Api')->group(function () {
+    Route::post('registration', 'UsersController@store')->name('registration');
+    Route::post('login', 'AppController@login')->name('login');
 });
-Route::resource('tbl_users', 'Tbl_UsersController');
-Route::resource('tbl_announcements', 'AnnouncementsController');
-Route::resource('tbl_orders', 'OrdersController');
-Route::resource('Scripts', 'ScriptsController');
-Route::resource('tbl_script_financials', 'ScriptFinancialsController');
-Route::resource('tbl_script_newslinks', 'ScriptNewslinksController');
+
+//Route::resource('users', 'UsersController','');
+//Route::resource('announcements', 'AnnouncementsController');
+//Route::resource('orders', 'OrdersController');
+//Route::resource('scripts', 'ScriptsController');
+//Route::resource('script-financials', 'ScriptFinancialsController');
+//Route::resource('script-newslinks', 'ScriptNewslinksController');

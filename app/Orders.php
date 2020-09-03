@@ -15,9 +15,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property $lot_size
  * @property $order_date
  * @property $placed_by
- * @property $creation_date
+ * @property $created_at
  * @property $last_updated_by
- * @property $last_update_date
+ * @property $updated_at
  * @property $cust_id
  * @property $assigned_to
  * @property $notes
@@ -60,7 +60,7 @@ class Orders extends Model
      *
      * @var array
      */
-    protected $dates = ['order_date', 'creation_date', 'last_update_date'];
+    protected $dates = ['order_date', 'created_at', 'updated_at'];
 
     public static function findByField($field, $value)
     {

@@ -21,9 +21,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property $script_status
  * @property $script_face_val
  * @property $script_ltp
- * @property $creation_date
+ * @property $created_at
  * @property $created_by
- * @property $last_update_date
+ * @property $updated_at
  * @property $last_updated_by
  */
 
@@ -64,7 +64,7 @@ class Scripts extends Model
      *
      * @var array
      */
-    protected $dates = ['creation_date', 'last_update_date'];
+    protected $dates = ['created_at', 'updated_at'];
 
     public static function findByField($field, $value)
     {
